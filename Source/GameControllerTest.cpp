@@ -453,6 +453,24 @@ void GameControllerTest::createControllerSprite(ControllerHolder& holder)
     holder._holderNode->addChild(holder._buttonB);
 }
 
+void GameControllerTest::RegisterKeyboardListener()
+{
+    // creating a keyboard event listener
+    auto listener = EventListenerKeyboard::create();
+    listener->onKeyPressed = AX_CALLBACK_2(GameControllerTest::KeyboardOnKeyPressed, this);
+    listener->onKeyReleased = AX_CALLBACK_2(GameControllerTest::KeyboardOnKeyReleased, this);
+
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+}
+void GameControllerTest::KeyboardOnKeyPressed(axmol::EventKeyboard::KeyCode keyCode, Event* event)
+{
+
+}
+void GameControllerTest::KeyboardOnKeyReleased(axmol::EventKeyboard::KeyCode keyCode, Event* event)
+{
+
+}
+
 void GameControllerTest::menuCloseCallback(Ref* sender)
 {
     Director::getInstance()->end();

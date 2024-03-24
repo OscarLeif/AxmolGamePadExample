@@ -75,6 +75,12 @@ private:
     void onDisconnectedController(Controller *controller, Event *event);
 
     void resetControllerHolderState(ControllerHolder &holder);
+
+    //Keyboard
+    void RegisterKeyboardListener();
+    void KeyboardOnKeyPressed(axmol::EventKeyboard::KeyCode keyCode, Event* event);
+    void KeyboardOnKeyReleased(axmol::EventKeyboard::KeyCode keyCode, Event* event);
+
 };
 
 
